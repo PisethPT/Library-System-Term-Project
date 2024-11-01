@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BookLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BookLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="AuthorId" />
@@ -173,6 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetViewBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Pro_GetCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="BookLibraryModelStoreContainer">
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
@@ -213,8 +214,7 @@
             <End Role="BookRequest" EntitySet="BookRequest" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BookLibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -439,10 +439,24 @@
             <End Role="BookRequest" EntitySet="BookRequests" />
           </AssociationSet>
           <FunctionImport Name="Pro_GetCategory" ReturnType="Collection(BookLibraryModel.Pro_GetCategory_Result)" />
+          <FunctionImport Name="GetViewBooks" ReturnType="Collection(BookLibraryModel.GetViewBooks_Result)" />
         </EntityContainer>
         <ComplexType Name="Pro_GetCategory_Result">
           <Property Type="Int32" Name="CategoryId" Nullable="false" />
           <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetViewBooks_Result">
+          <Property Type="Int32" Name="BookId" Nullable="false" />
+          <Property Type="String" Name="ISBNCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="BookTitle" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublisherName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublicationLanguage" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublicationType" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="PublicationYear" Nullable="true" />
+          <Property Type="Byte" Name="BookEdition" Nullable="true" />
+          <Property Type="Int32" Name="CopiesTotal" Nullable="false" />
+          <Property Type="Int32" Name="CopiesAvailable" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -548,6 +562,23 @@
               <ComplexTypeMapping TypeName="BookLibraryModel.Pro_GetCategory_Result">
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetViewBooks" FunctionName="BookLibraryModel.Store.GetViewBooks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BookLibraryModel.GetViewBooks_Result">
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="ISBNCode" ColumnName="ISBNCode" />
+                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
+                <ScalarProperty Name="PublicationLanguage" ColumnName="PublicationLanguage" />
+                <ScalarProperty Name="PublicationType" ColumnName="PublicationType" />
+                <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+                <ScalarProperty Name="BookEdition" ColumnName="BookEdition" />
+                <ScalarProperty Name="CopiesTotal" ColumnName="CopiesTotal" />
+                <ScalarProperty Name="CopiesAvailable" ColumnName="CopiesAvailable" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

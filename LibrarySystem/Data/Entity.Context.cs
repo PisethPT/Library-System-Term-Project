@@ -41,5 +41,10 @@ namespace LibrarySystem.Data
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pro_GetCategory_Result>("Pro_GetCategory");
         }
+    
+        public virtual ObjectResult<GetViewBooks_Result> GetViewBooks()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetViewBooks_Result>("GetViewBooks");
+        }
     }
 }
