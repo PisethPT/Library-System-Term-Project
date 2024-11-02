@@ -46,5 +46,42 @@ namespace LibrarySystem.Data
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetViewBooks_Result>("GetViewBooks");
         }
+    
+        public virtual int Pro_InsertBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publicationId, Nullable<System.DateTime> publicatioinYear, Nullable<byte> bookEdition, Nullable<int> copiesTotal, Nullable<int> copiesAvailable)
+        {
+            var iSBNCodeParameter = iSBNCode != null ?
+                new ObjectParameter("ISBNCode", iSBNCode) :
+                new ObjectParameter("ISBNCode", typeof(string));
+    
+            var bookTitleParameter = bookTitle != null ?
+                new ObjectParameter("bookTitle", bookTitle) :
+                new ObjectParameter("bookTitle", typeof(string));
+    
+            var categoryIdParameter = categoryId.HasValue ?
+                new ObjectParameter("categoryId", categoryId) :
+                new ObjectParameter("categoryId", typeof(int));
+    
+            var publicationIdParameter = publicationId.HasValue ?
+                new ObjectParameter("publicationId", publicationId) :
+                new ObjectParameter("publicationId", typeof(int));
+    
+            var publicatioinYearParameter = publicatioinYear.HasValue ?
+                new ObjectParameter("publicatioinYear", publicatioinYear) :
+                new ObjectParameter("publicatioinYear", typeof(System.DateTime));
+    
+            var bookEditionParameter = bookEdition.HasValue ?
+                new ObjectParameter("bookEdition", bookEdition) :
+                new ObjectParameter("bookEdition", typeof(byte));
+    
+            var copiesTotalParameter = copiesTotal.HasValue ?
+                new ObjectParameter("copiesTotal", copiesTotal) :
+                new ObjectParameter("copiesTotal", typeof(int));
+    
+            var copiesAvailableParameter = copiesAvailable.HasValue ?
+                new ObjectParameter("copiesAvailable", copiesAvailable) :
+                new ObjectParameter("copiesAvailable", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pro_InsertBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publicationIdParameter, publicatioinYearParameter, bookEditionParameter, copiesTotalParameter, copiesAvailableParameter);
+        }
     }
 }

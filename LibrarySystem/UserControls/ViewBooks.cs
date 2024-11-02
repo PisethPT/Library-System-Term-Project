@@ -1,7 +1,8 @@
 ﻿using LibrarySystem.Data;
+using LibrarySystem.Views;
 using System;
-using System.Linq;
 using System.Windows.Forms;
+using static LibrarySystem.Program;
 
 namespace LibrarySystem.UserControls
 {
@@ -17,5 +18,12 @@ namespace LibrarySystem.UserControls
 		}
 
 		private void GetViewBooks() => this.ViewBookTable.DataSource = context.GetViewBooks();
+
+		private void BtnSearch_Click(object sender, EventArgs e)
+		{
+			BookSearch search = new BookSearch();
+			search.Owner = main;
+			search.ShowDialog();
+		}
 	}
 }

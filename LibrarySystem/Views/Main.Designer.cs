@@ -93,14 +93,14 @@
 			// borrowBookToolStripMenuItem
 			// 
 			this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
-			this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+			this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
 			this.borrowBookToolStripMenuItem.Text = "Borrow Book";
 			this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
 			// 
 			// bookIssueToolStripMenuItem
 			// 
 			this.bookIssueToolStripMenuItem.Name = "bookIssueToolStripMenuItem";
-			this.bookIssueToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+			this.bookIssueToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
 			this.bookIssueToolStripMenuItem.Text = "Book Issue";
 			this.bookIssueToolStripMenuItem.Click += new System.EventHandler(this.bookIssueToolStripMenuItem_Click);
 			// 
@@ -128,7 +128,7 @@
             this.updateBookToolStripMenuItem,
             this.deleteBookToolStripMenuItem});
 			this.addNewStaffToolStripMenuItem.Name = "addNewStaffToolStripMenuItem";
-			this.addNewStaffToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+			this.addNewStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.addNewStaffToolStripMenuItem.Text = "Book Modify";
 			// 
 			// addNewBookToolStripMenuItem1
@@ -136,6 +136,7 @@
 			this.addNewBookToolStripMenuItem1.Name = "addNewBookToolStripMenuItem1";
 			this.addNewBookToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
 			this.addNewBookToolStripMenuItem1.Text = "Add New Book";
+			this.addNewBookToolStripMenuItem1.Click += new System.EventHandler(this.addNewBookToolStripMenuItem1_Click);
 			// 
 			// updateBookToolStripMenuItem
 			// 
@@ -228,9 +229,9 @@
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(804, 46);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(221, 40);
+			this.label1.Size = new System.Drawing.Size(254, 40);
 			this.label1.TabIndex = 5;
-			this.label1.Text = "Library System";
+			this.label1.Text = "LIBRARY SYSTEM";
 			// 
 			// Main
 			// 

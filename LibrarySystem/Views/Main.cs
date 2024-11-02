@@ -41,6 +41,7 @@ namespace LibrarySystem.Views
 					}
 				case SystemOption.AddNewBook:
 					{
+						Option.ShowUserControl<AddBook>(this.MainFlowContainer, new AddBook());
 						break;
 					}
 				case SystemOption.UpdateBook:
@@ -82,6 +83,8 @@ namespace LibrarySystem.Views
 		private void bookIssueToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.BookIssue);
 
 		private void listOfStaffToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.ViewBooks);
+
+		private void addNewBookToolStripMenuItem1_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AddNewBook);
 	}
 
 

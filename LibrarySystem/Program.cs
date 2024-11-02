@@ -6,6 +6,8 @@ namespace LibrarySystem
 {
 	internal static class Program
 	{
+		public static Main main;
+
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -14,7 +16,8 @@ namespace LibrarySystem
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Main());
+			main = new Main();
+			Application.Run(main);
 		}
 	}
 }

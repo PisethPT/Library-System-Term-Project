@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="BookId" />
           </Key>
-          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ISBNCode" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="BookTitle" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="CategoryId" Type="int" />
@@ -175,6 +175,16 @@
         </Association>
         <Function Name="GetViewBooks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Pro_GetCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Pro_InsertBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ISBNCode" Type="varchar" Mode="In" />
+          <Parameter Name="bookTitle" Type="varchar" Mode="In" />
+          <Parameter Name="categoryId" Type="int" Mode="In" />
+          <Parameter Name="publicationId" Type="int" Mode="In" />
+          <Parameter Name="publicatioinYear" Type="date" Mode="In" />
+          <Parameter Name="bookEdition" Type="tinyint" Mode="In" />
+          <Parameter Name="copiesTotal" Type="int" Mode="In" />
+          <Parameter Name="copiesAvailable" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="BookLibraryModelStoreContainer">
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
@@ -440,6 +450,16 @@
           </AssociationSet>
           <FunctionImport Name="Pro_GetCategory" ReturnType="Collection(BookLibraryModel.Pro_GetCategory_Result)" />
           <FunctionImport Name="GetViewBooks" ReturnType="Collection(BookLibraryModel.GetViewBooks_Result)" />
+          <FunctionImport Name="Pro_InsertBook">
+            <Parameter Name="ISBNCode" Mode="In" Type="String" />
+            <Parameter Name="bookTitle" Mode="In" Type="String" />
+            <Parameter Name="categoryId" Mode="In" Type="Int32" />
+            <Parameter Name="publicationId" Mode="In" Type="Int32" />
+            <Parameter Name="publicatioinYear" Mode="In" Type="DateTime" />
+            <Parameter Name="bookEdition" Mode="In" Type="Byte" />
+            <Parameter Name="copiesTotal" Mode="In" Type="Int32" />
+            <Parameter Name="copiesAvailable" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Pro_GetCategory_Result">
           <Property Type="Int32" Name="CategoryId" Nullable="false" />
@@ -582,6 +602,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pro_InsertBook" FunctionName="BookLibraryModel.Store.Pro_InsertBook" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
