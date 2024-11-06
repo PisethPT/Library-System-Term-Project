@@ -207,7 +207,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Function\" />
+    <Folder Include="image\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Entity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
