@@ -46,6 +46,7 @@ namespace LibrarySystem.UserControls
 		{
 			var message = operations.Insert(BookDetail());
 			MessageBox.Show(message);
+			ClearFields();
 		}
 
 		private void Publisher_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,5 +80,18 @@ namespace LibrarySystem.UserControls
 			return book;
 		}
 
+		private void BtnReset_Click(object sender, EventArgs e) => ClearFields();
+
+		private void ClearFields()
+		{
+			this.ISBNCode.Text = string.Empty;
+			this.BookTitle.Text = string.Empty;
+			this.Category.SelectedIndex = 0;
+			this.Publisher.SelectedIndex = 0;
+			this.PublicationDate.Value = DateTime.Today;
+			this.BookEdition.Value = 1;
+			this.CopiesTotal.Value = 1;
+			this.CopiesAvailable.Value = 1;
+		}
 	}
 }

@@ -14,7 +14,7 @@ namespace LibrarySystem.Data
     
     public partial class BookAuthor
     {
-        public int BookId { get; set; }
+        public int BookAuthorId { get; set; }
         public Nullable<int> AuthorId { get; set; }
     
         public virtual Author Author { get; set; }

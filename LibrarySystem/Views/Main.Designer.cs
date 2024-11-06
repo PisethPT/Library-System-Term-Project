@@ -143,6 +143,7 @@
 			this.updateBookToolStripMenuItem.Name = "updateBookToolStripMenuItem";
 			this.updateBookToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
 			this.updateBookToolStripMenuItem.Text = "Update Book";
+			this.updateBookToolStripMenuItem.Click += new System.EventHandler(this.updateBookToolStripMenuItem_Click);
 			// 
 			// deleteBookToolStripMenuItem
 			// 
@@ -245,7 +246,6 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MainMenuStrip = this.menuStrip;
 			this.MaximizeBox = false;
-			this.MinimizeBox = false;
 			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Library System";

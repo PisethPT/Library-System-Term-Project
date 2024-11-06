@@ -29,13 +29,13 @@ namespace LibrarySystem.Data
     
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<BookAuthor> BookAuthors { get; set; }
         public virtual DbSet<BookIssue> BookIssues { get; set; }
         public virtual DbSet<BookRequest> BookRequests { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<BookAuthor> BookAuthors { get; set; }
     
         public virtual ObjectResult<Pro_GetCategory_Result> Pro_GetCategory()
         {
@@ -47,7 +47,7 @@ namespace LibrarySystem.Data
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetViewBooks_Result>("GetViewBooks");
         }
     
-        public virtual int Pro_InsertBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publicationId, Nullable<System.DateTime> publicatioinYear, Nullable<byte> bookEdition, Nullable<int> copiesTotal, Nullable<int> copiesAvailable)
+        public virtual int Pro_InsertBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publicationId, Nullable<System.DateTime> publicationYear, Nullable<byte> bookEdition, Nullable<int> copiesTotal, Nullable<int> copiesAvailable)
         {
             var iSBNCodeParameter = iSBNCode != null ?
                 new ObjectParameter("ISBNCode", iSBNCode) :
@@ -65,9 +65,9 @@ namespace LibrarySystem.Data
                 new ObjectParameter("publicationId", publicationId) :
                 new ObjectParameter("publicationId", typeof(int));
     
-            var publicatioinYearParameter = publicatioinYear.HasValue ?
-                new ObjectParameter("publicatioinYear", publicatioinYear) :
-                new ObjectParameter("publicatioinYear", typeof(System.DateTime));
+            var publicationYearParameter = publicationYear.HasValue ?
+                new ObjectParameter("publicationYear", publicationYear) :
+                new ObjectParameter("publicationYear", typeof(System.DateTime));
     
             var bookEditionParameter = bookEdition.HasValue ?
                 new ObjectParameter("bookEdition", bookEdition) :
@@ -81,7 +81,36 @@ namespace LibrarySystem.Data
                 new ObjectParameter("copiesAvailable", copiesAvailable) :
                 new ObjectParameter("copiesAvailable", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pro_InsertBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publicationIdParameter, publicatioinYearParameter, bookEditionParameter, copiesTotalParameter, copiesAvailableParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pro_InsertBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publicationIdParameter, publicationYearParameter, bookEditionParameter, copiesTotalParameter, copiesAvailableParameter);
+        }
+    
+        public virtual ObjectResult<SearchBook_Result> SearchBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publisherId, Nullable<System.DateTime> publicationYear, Nullable<byte> bookEdition)
+        {
+            var iSBNCodeParameter = iSBNCode != null ?
+                new ObjectParameter("ISBNCode", iSBNCode) :
+                new ObjectParameter("ISBNCode", typeof(string));
+    
+            var bookTitleParameter = bookTitle != null ?
+                new ObjectParameter("BookTitle", bookTitle) :
+                new ObjectParameter("BookTitle", typeof(string));
+    
+            var categoryIdParameter = categoryId.HasValue ?
+                new ObjectParameter("CategoryId", categoryId) :
+                new ObjectParameter("CategoryId", typeof(int));
+    
+            var publisherIdParameter = publisherId.HasValue ?
+                new ObjectParameter("PublisherId", publisherId) :
+                new ObjectParameter("PublisherId", typeof(int));
+    
+            var publicationYearParameter = publicationYear.HasValue ?
+                new ObjectParameter("PublicationYear", publicationYear) :
+                new ObjectParameter("PublicationYear", typeof(System.DateTime));
+    
+            var bookEditionParameter = bookEdition.HasValue ?
+                new ObjectParameter("BookEdition", bookEdition) :
+                new ObjectParameter("BookEdition", typeof(byte));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SearchBook_Result>("SearchBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publisherIdParameter, publicationYearParameter, bookEditionParameter);
         }
     }
 }

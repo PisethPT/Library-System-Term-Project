@@ -26,7 +26,11 @@ namespace LibrarySystem.Services
 
 		public Book GetById(int Id)
 		{
-			throw new NotImplementedException();
+			var book = context.Books.FirstOrDefault(b => b.BookId == Id);
+			if (book is null)
+				return null;
+
+			return book;
 		}
 
 		public string Insert(Book entity)

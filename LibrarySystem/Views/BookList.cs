@@ -1,31 +1,33 @@
 ﻿using LibrarySystem.Data;
-using LibrarySystem.Views;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static LibrarySystem.Program;
 
-namespace LibrarySystem.UserControls
+namespace LibrarySystem.Views
 {
-	public partial class ViewBooks : UserControl
+	public partial class BookList : Form
 	{
 		private BookLibrary context;
-		public ViewBooks()
+		public BookList()
 		{
 			InitializeComponent();
-			if (this != null)
-				Static.Component.ViewBookTable = this.ViewBookTable;
-
 			context = new BookLibrary();
-			this.SearchType.SelectedIndex = 0;
-			GetViewBooks();
+			GetViewBook();
 		}
 
-		private void GetViewBooks()
+		private void GetViewBook()
 		{
 			this.ViewBookTable.DataSource = context.GetViewBooks();
 
 			this.ViewBookTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+			this.ViewBookTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -42,13 +44,6 @@ namespace LibrarySystem.UserControls
 			this.ViewBookTable.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			this.ViewBookTable.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			this.ViewBookTable.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-		}
-
-		private void BtnSearch_Click(object sender, EventArgs e)
-		{
-			BookSearch search = new BookSearch();
-			search.Owner = main;
-			search.ShowDialog();
 		}
 	}
 }

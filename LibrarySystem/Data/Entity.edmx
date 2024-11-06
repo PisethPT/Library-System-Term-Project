@@ -29,9 +29,9 @@
         </EntityType>
         <EntityType Name="BookAuthor">
           <Key>
-            <PropertyRef Name="BookId" />
+            <PropertyRef Name="BookAuthorId" />
           </Key>
-          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="BookAuthorId" Type="int" Nullable="false" />
           <Property Name="AuthorId" Type="int" />
         </EntityType>
         <EntityType Name="BookIssue">
@@ -180,10 +180,18 @@
           <Parameter Name="bookTitle" Type="varchar" Mode="In" />
           <Parameter Name="categoryId" Type="int" Mode="In" />
           <Parameter Name="publicationId" Type="int" Mode="In" />
-          <Parameter Name="publicatioinYear" Type="date" Mode="In" />
+          <Parameter Name="publicationYear" Type="date" Mode="In" />
           <Parameter Name="bookEdition" Type="tinyint" Mode="In" />
           <Parameter Name="copiesTotal" Type="int" Mode="In" />
           <Parameter Name="copiesAvailable" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SearchBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ISBNCode" Type="varchar" Mode="In" />
+          <Parameter Name="BookTitle" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryId" Type="int" Mode="In" />
+          <Parameter Name="PublisherId" Type="int" Mode="In" />
+          <Parameter Name="PublicationYear" Type="date" Mode="In" />
+          <Parameter Name="BookEdition" Type="tinyint" Mode="In" />
         </Function>
         <EntityContainer Name="BookLibraryModelStoreContainer">
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
@@ -235,7 +243,7 @@
           <Property Name="AuthorId" Type="Int32" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="BookAuthors" Relationship="Self.FK__BookAutho__Autho__4D94879B" FromRole="Author" ToRole="BookAuthor" />
+          <NavigationProperty Name="BookAuthors" Relationship="BookLibraryModel.FK__BookAutho__Autho__4D94879B" FromRole="Author" ToRole="BookAuthor" />
         </EntityType>
         <EntityType Name="Book">
           <Key>
@@ -253,14 +261,6 @@
           <NavigationProperty Name="Category" Relationship="Self.FK__Book__CategoryId__3E52440B" FromRole="Book" ToRole="Category" />
           <NavigationProperty Name="Publisher" Relationship="Self.FK__Book__PublisherI__3F466844" FromRole="Book" ToRole="Publisher" />
           <NavigationProperty Name="BookIssues" Relationship="Self.FK__BookIssue__BookI__4AB81AF0" FromRole="Book" ToRole="BookIssue" />
-        </EntityType>
-        <EntityType Name="BookAuthor">
-          <Key>
-            <PropertyRef Name="BookId" />
-          </Key>
-          <Property Name="BookId" Type="Int32" Nullable="false" />
-          <Property Name="AuthorId" Type="Int32" />
-          <NavigationProperty Name="Author" Relationship="Self.FK__BookAutho__Autho__4D94879B" FromRole="BookAuthor" ToRole="Author" />
         </EntityType>
         <EntityType Name="BookIssue">
           <Key>
@@ -326,18 +326,6 @@
           <Property Name="StaffName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="BookRequests" Relationship="Self.FK__BookReque__Staff__46E78A0C" FromRole="Staff" ToRole="BookRequest" />
         </EntityType>
-        <Association Name="FK__BookAutho__Autho__4D94879B">
-          <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
-          <End Role="BookAuthor" Type="Self.BookAuthor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Author">
-              <PropertyRef Name="AuthorId" />
-            </Principal>
-            <Dependent Role="BookAuthor">
-              <PropertyRef Name="AuthorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Book__CategoryId__3E52440B">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
@@ -413,17 +401,12 @@
         <EntityContainer Name="BookLibrary" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authors" EntityType="Self.Author" />
           <EntitySet Name="Books" EntityType="Self.Book" />
-          <EntitySet Name="BookAuthors" EntityType="Self.BookAuthor" />
           <EntitySet Name="BookIssues" EntityType="Self.BookIssue" />
           <EntitySet Name="BookRequests" EntityType="Self.BookRequest" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Members" EntityType="Self.Member" />
           <EntitySet Name="Publishers" EntityType="Self.Publisher" />
           <EntitySet Name="Staffs" EntityType="Self.Staff" />
-          <AssociationSet Name="FK__BookAutho__Autho__4D94879B" Association="Self.FK__BookAutho__Autho__4D94879B">
-            <End Role="Author" EntitySet="Authors" />
-            <End Role="BookAuthor" EntitySet="BookAuthors" />
-          </AssociationSet>
           <AssociationSet Name="FK__Book__CategoryId__3E52440B" Association="Self.FK__Book__CategoryId__3E52440B">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Book" EntitySet="Books" />
@@ -455,11 +438,24 @@
             <Parameter Name="bookTitle" Mode="In" Type="String" />
             <Parameter Name="categoryId" Mode="In" Type="Int32" />
             <Parameter Name="publicationId" Mode="In" Type="Int32" />
-            <Parameter Name="publicatioinYear" Mode="In" Type="DateTime" />
+            <Parameter Name="publicationYear" Mode="In" Type="DateTime" />
             <Parameter Name="bookEdition" Mode="In" Type="Byte" />
             <Parameter Name="copiesTotal" Mode="In" Type="Int32" />
             <Parameter Name="copiesAvailable" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SearchBook" ReturnType="Collection(BookLibraryModel.SearchBook_Result)">
+            <Parameter Name="ISBNCode" Mode="In" Type="String" />
+            <Parameter Name="BookTitle" Mode="In" Type="String" />
+            <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="PublisherId" Mode="In" Type="Int32" />
+            <Parameter Name="PublicationYear" Mode="In" Type="DateTime" />
+            <Parameter Name="BookEdition" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <EntitySet Name="BookAuthors" EntityType="BookLibraryModel.BookAuthor" />
+          <AssociationSet Name="FK__BookAutho__Autho__4D94879B" Association="BookLibraryModel.FK__BookAutho__Autho__4D94879B">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="BookAuthor" EntitySet="BookAuthors" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="Pro_GetCategory_Result">
           <Property Type="Int32" Name="CategoryId" Nullable="false" />
@@ -478,6 +474,39 @@
           <Property Type="Int32" Name="CopiesTotal" Nullable="false" />
           <Property Type="Int32" Name="CopiesAvailable" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="SearchBook_Result">
+          <Property Type="Int32" Name="BookId" Nullable="false" />
+          <Property Type="String" Name="ISBNCode" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="BookTitle" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublisherName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublicationLanguage" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PublicationType" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="PublicationYear" Nullable="true" />
+          <Property Type="Byte" Name="BookEdition" Nullable="true" />
+          <Property Type="Int32" Name="CopiesTotal" Nullable="false" />
+          <Property Type="Int32" Name="CopiesAvailable" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="BookAuthor">
+          <Key>
+            <PropertyRef Name="BookAuthorId" />
+          </Key>
+          <Property Name="BookAuthorId" Type="Int32" Nullable="false" />
+          <Property Name="AuthorId" Type="Int32" />
+          <NavigationProperty Name="Author" Relationship="BookLibraryModel.FK__BookAutho__Autho__4D94879B" FromRole="BookAuthor" ToRole="Author" />
+        </EntityType>
+        <Association Name="FK__BookAutho__Autho__4D94879B">
+          <End Type="BookLibraryModel.Author" Role="Author" Multiplicity="0..1" />
+          <End Type="BookLibraryModel.BookAuthor" Role="BookAuthor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="BookAuthor">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -505,14 +534,6 @@
                 <ScalarProperty Name="BookEdition" ColumnName="BookEdition" />
                 <ScalarProperty Name="CopiesTotal" ColumnName="CopiesTotal" />
                 <ScalarProperty Name="CopiesAvailable" ColumnName="CopiesAvailable" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BookAuthors">
-            <EntityTypeMapping TypeName="BookLibraryModel.BookAuthor">
-              <MappingFragment StoreEntitySet="BookAuthor">
-                <ScalarProperty Name="BookId" ColumnName="BookId" />
-                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -603,6 +624,31 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Pro_InsertBook" FunctionName="BookLibraryModel.Store.Pro_InsertBook" />
+          <FunctionImportMapping FunctionImportName="SearchBook" FunctionName="BookLibraryModel.Store.SearchBook">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BookLibraryModel.SearchBook_Result">
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="ISBNCode" ColumnName="ISBNCode" />
+                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
+                <ScalarProperty Name="PublicationLanguage" ColumnName="PublicationLanguage" />
+                <ScalarProperty Name="PublicationType" ColumnName="PublicationType" />
+                <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+                <ScalarProperty Name="BookEdition" ColumnName="BookEdition" />
+                <ScalarProperty Name="CopiesTotal" ColumnName="CopiesTotal" />
+                <ScalarProperty Name="CopiesAvailable" ColumnName="CopiesAvailable" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="BookAuthors">
+            <EntityTypeMapping TypeName="BookLibraryModel.BookAuthor">
+              <MappingFragment StoreEntitySet="BookAuthor">
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="BookAuthorId" ColumnName="BookAuthorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

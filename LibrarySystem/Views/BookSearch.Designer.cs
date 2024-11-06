@@ -29,52 +29,48 @@
 		private void InitializeComponent()
 		{
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.ISNBCode = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.BookTitle = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.Category = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.Publisher = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.label6 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.BookEdition = new System.Windows.Forms.NumericUpDown();
 			this.label8 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.Reset = new System.Windows.Forms.Button();
+			this.Search = new System.Windows.Forms.Button();
 			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel4.SuspendLayout();
-			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.BookEdition)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.textBox1);
+			this.panel2.Controls.Add(this.ISNBCode);
 			this.panel2.Controls.Add(this.label2);
 			this.panel2.Location = new System.Drawing.Point(12, 58);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(439, 35);
 			this.panel2.TabIndex = 6;
 			// 
-			// textBox1
+			// ISNBCode
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(92, 4);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(180, 29);
-			this.textBox1.TabIndex = 6;
+			this.ISNBCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ISNBCode.Location = new System.Drawing.Point(119, 4);
+			this.ISNBCode.Multiline = true;
+			this.ISNBCode.Name = "ISNBCode";
+			this.ISNBCode.Size = new System.Drawing.Size(212, 29);
+			this.ISNBCode.TabIndex = 6;
 			// 
 			// label2
 			// 
@@ -98,21 +94,21 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.textBox2);
+			this.panel3.Controls.Add(this.BookTitle);
 			this.panel3.Controls.Add(this.label3);
 			this.panel3.Location = new System.Drawing.Point(12, 107);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(439, 35);
 			this.panel3.TabIndex = 8;
 			// 
-			// textBox2
+			// BookTitle
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(92, 3);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(314, 29);
-			this.textBox2.TabIndex = 6;
+			this.BookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BookTitle.Location = new System.Drawing.Point(119, 3);
+			this.BookTitle.Multiline = true;
+			this.BookTitle.Name = "BookTitle";
+			this.BookTitle.Size = new System.Drawing.Size(317, 29);
+			this.BookTitle.TabIndex = 6;
 			// 
 			// label3
 			// 
@@ -126,32 +122,27 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.comboBox1);
+			this.panel1.Controls.Add(this.Category);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Location = new System.Drawing.Point(12, 157);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(439, 35);
 			this.panel1.TabIndex = 9;
 			// 
-			// comboBox1
+			// Category
 			// 
-			this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-            "ISBN Code",
-            "Book Name",
-            "Category",
-            "Publisher Name"});
-			this.comboBox1.Location = new System.Drawing.Point(92, 3);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(239, 29);
-			this.comboBox1.TabIndex = 8;
+			this.Category.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Category.FormattingEnabled = true;
+			this.Category.Location = new System.Drawing.Point(119, 3);
+			this.Category.Name = "Category";
+			this.Category.Size = new System.Drawing.Size(257, 29);
+			this.Category.TabIndex = 8;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(2, 7);
+			this.label4.Location = new System.Drawing.Point(8, 6);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(76, 21);
 			this.label4.TabIndex = 7;
@@ -159,26 +150,21 @@
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.comboBox2);
+			this.panel4.Controls.Add(this.Publisher);
 			this.panel4.Controls.Add(this.label5);
 			this.panel4.Location = new System.Drawing.Point(12, 207);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(439, 35);
 			this.panel4.TabIndex = 10;
 			// 
-			// comboBox2
+			// Publisher
 			// 
-			this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
-            "ISBN Code",
-            "Book Name",
-            "Category",
-            "Publisher Name"});
-			this.comboBox2.Location = new System.Drawing.Point(92, 3);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(239, 29);
-			this.comboBox2.TabIndex = 8;
+			this.Publisher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Publisher.FormattingEnabled = true;
+			this.Publisher.Location = new System.Drawing.Point(119, 3);
+			this.Publisher.Name = "Publisher";
+			this.Publisher.Size = new System.Drawing.Size(257, 29);
+			this.Publisher.TabIndex = 8;
 			// 
 			// label5
 			// 
@@ -190,58 +176,23 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Publisher:";
 			// 
-			// panel5
-			// 
-			this.panel5.Controls.Add(this.dateTimePicker1);
-			this.panel5.Controls.Add(this.label6);
-			this.panel5.Location = new System.Drawing.Point(12, 256);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(439, 35);
-			this.panel5.TabIndex = 11;
-			// 
-			// dateTimePicker1
-			// 
-			this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker1.CustomFormat = "";
-			this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker1.Location = new System.Drawing.Point(132, 3);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(274, 29);
-			this.dateTimePicker1.TabIndex = 9;
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(3, 7);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(123, 21);
-			this.label6.TabIndex = 7;
-			this.label6.Text = "Publication Date";
-			// 
 			// panel6
 			// 
-			this.panel6.Controls.Add(this.numericUpDown1);
+			this.panel6.Controls.Add(this.BookEdition);
 			this.panel6.Controls.Add(this.label8);
-			this.panel6.Location = new System.Drawing.Point(12, 305);
+			this.panel6.Location = new System.Drawing.Point(12, 257);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(439, 35);
 			this.panel6.TabIndex = 12;
 			// 
-			// numericUpDown1
+			// BookEdition
 			// 
-			this.numericUpDown1.DecimalPlaces = 1;
-			this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.numericUpDown1.Location = new System.Drawing.Point(119, 3);
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(182, 29);
-			this.numericUpDown1.TabIndex = 10;
-			this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+			this.BookEdition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BookEdition.Location = new System.Drawing.Point(119, 3);
+			this.BookEdition.Name = "BookEdition";
+			this.BookEdition.Size = new System.Drawing.Size(212, 29);
+			this.BookEdition.TabIndex = 10;
+			this.BookEdition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label8
 			// 
@@ -253,25 +204,27 @@
 			this.label8.TabIndex = 7;
 			this.label8.Text = "Book Edition:";
 			// 
-			// button2
+			// Reset
 			// 
-			this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(234, 357);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(95, 29);
-			this.button2.TabIndex = 13;
-			this.button2.Text = "Reset";
-			this.button2.UseVisualStyleBackColor = true;
+			this.Reset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Reset.Location = new System.Drawing.Point(234, 357);
+			this.Reset.Name = "Reset";
+			this.Reset.Size = new System.Drawing.Size(95, 29);
+			this.Reset.TabIndex = 13;
+			this.Reset.Text = "Reset";
+			this.Reset.UseVisualStyleBackColor = true;
+			this.Reset.Click += new System.EventHandler(this.Reset_Click);
 			// 
-			// button1
+			// Search
 			// 
-			this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(356, 357);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(95, 29);
-			this.button1.TabIndex = 14;
-			this.button1.Text = "Search";
-			this.button1.UseVisualStyleBackColor = true;
+			this.Search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Search.Location = new System.Drawing.Point(356, 357);
+			this.Search.Name = "Search";
+			this.Search.Size = new System.Drawing.Size(95, 29);
+			this.Search.TabIndex = 14;
+			this.Search.Text = "Search";
+			this.Search.UseVisualStyleBackColor = true;
+			this.Search.Click += new System.EventHandler(this.Search_Click);
 			// 
 			// BookSearch
 			// 
@@ -279,16 +232,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.ClientSize = new System.Drawing.Size(464, 398);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.ControlBox = false;
+			this.Controls.Add(this.Reset);
+			this.Controls.Add(this.Search);
 			this.Controls.Add(this.panel6);
-			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.panel2);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "BookSearch";
@@ -302,11 +255,9 @@
 			this.panel1.PerformLayout();
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
-			this.panel5.ResumeLayout(false);
-			this.panel5.PerformLayout();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.BookEdition)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -315,25 +266,22 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox ISNBCode;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox BookTitle;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox Category;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox Publisher;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown BookEdition;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button Reset;
+		private System.Windows.Forms.Button Search;
 	}
 }

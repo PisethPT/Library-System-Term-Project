@@ -1,6 +1,6 @@
 ﻿namespace LibrarySystem.UserControls
 {
-	partial class AddBook
+	partial class UpdateBook
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,8 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBook));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.BookList = new System.Windows.Forms.Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.PublicationType = new System.Windows.Forms.TextBox();
 			this.PublicationDate = new System.Windows.Forms.DateTimePicker();
@@ -57,6 +58,7 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.ISBNCode = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -68,19 +70,10 @@
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(406, 128);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(165, 25);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Add New Book";
-			// 
 			// panel1
 			// 
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel1.Controls.Add(this.BookList);
 			this.panel1.Controls.Add(this.panel6);
 			this.panel1.Controls.Add(this.BtnReset);
 			this.panel1.Controls.Add(this.BtnSave);
@@ -91,7 +84,17 @@
 			this.panel1.Location = new System.Drawing.Point(381, 167);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1086, 361);
-			this.panel1.TabIndex = 4;
+			this.panel1.TabIndex = 6;
+			// 
+			// BookList
+			// 
+			this.BookList.Image = ((System.Drawing.Image)(resources.GetObject("BookList.Image")));
+			this.BookList.Location = new System.Drawing.Point(438, 45);
+			this.BookList.Name = "BookList";
+			this.BookList.Size = new System.Drawing.Size(28, 28);
+			this.BookList.TabIndex = 11;
+			this.BookList.UseVisualStyleBackColor = true;
+			this.BookList.Click += new System.EventHandler(this.BookList_Click);
 			// 
 			// panel6
 			// 
@@ -155,7 +158,6 @@
 			this.BtnReset.TabIndex = 10;
 			this.BtnReset.Text = "Reset";
 			this.BtnReset.UseVisualStyleBackColor = true;
-			this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
 			// 
 			// BtnSave
 			// 
@@ -166,7 +168,6 @@
 			this.BtnSave.TabIndex = 10;
 			this.BtnSave.Text = "Save";
 			this.BtnSave.UseVisualStyleBackColor = true;
-			this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
 			// 
 			// panel5
 			// 
@@ -292,7 +293,6 @@
 			this.Publisher.Name = "Publisher";
 			this.Publisher.Size = new System.Drawing.Size(349, 29);
 			this.Publisher.TabIndex = 8;
-			this.Publisher.SelectedIndexChanged += new System.EventHandler(this.Publisher_SelectedIndexChanged);
 			// 
 			// label6
 			// 
@@ -397,14 +397,24 @@
 			this.label2.TabIndex = 6;
 			this.label2.Text = "ISNB Code:";
 			// 
-			// AddBook
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(406, 128);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(147, 25);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Update Book";
+			// 
+			// UpdateBook
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label1);
-			this.Name = "AddBook";
+			this.Name = "UpdateBook";
 			this.Size = new System.Drawing.Size(1873, 925);
 			this.panel1.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
@@ -427,34 +437,35 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox BookTitle;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox ISBNCode;
-		private System.Windows.Forms.ComboBox Category;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.ComboBox Publisher;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.NumericUpDown BookEdition;
-		private System.Windows.Forms.NumericUpDown CopiesTotal;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.NumericUpDown CopiesAvailable;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Button BtnReset;
-		private System.Windows.Forms.Button BtnSave;
 		private System.Windows.Forms.Panel panel6;
+		private System.Windows.Forms.TextBox PublicationType;
 		private System.Windows.Forms.DateTimePicker PublicationDate;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Button BtnReset;
+		private System.Windows.Forms.Button BtnSave;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.NumericUpDown CopiesAvailable;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.NumericUpDown CopiesTotal;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.NumericUpDown BookEdition;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.TextBox PublicationLanguage;
+		private System.Windows.Forms.ComboBox Publisher;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox PublicationType;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.ComboBox Category;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox BookTitle;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.TextBox ISBNCode;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button BookList;
 	}
 }
