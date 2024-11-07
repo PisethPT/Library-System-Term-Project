@@ -28,10 +28,12 @@ namespace LibrarySystem.Views
 					}
 				case SystemOption.BorrowBook:
 					{
+						Option.ShowUserControl<BorrowBook>(this.MainFlowContainer, new BorrowBook());
 						break;
 					}
 				case SystemOption.BookIssue:
 					{
+						Option.ShowUserControl<BookIssue>(this.MainFlowContainer, new BookIssue());
 						break;
 					}
 				case SystemOption.ViewBooks:
@@ -55,14 +57,17 @@ namespace LibrarySystem.Views
 					}
 				case SystemOption.ViewStaffs:
 					{
+						Option.ShowUserControl<ViewStaff>(this.MainFlowContainer, new ViewStaff());
 						break;
 					}
 				case SystemOption.AddNewStaff:
 					{
+						Option.ShowUserControl<AddStaff>(this.MainFlowContainer, new AddStaff());
 						break;
 					}
 				case SystemOption.UpdateStaff:
 					{
+						Option.ShowUserControl<UpdateStaff>(this.MainFlowContainer, new UpdateStaff());
 						break;
 					}
 				case SystemOption.DeleteStaff:
@@ -71,6 +76,7 @@ namespace LibrarySystem.Views
 					}
 				case SystemOption.AdminInfo:
 					{
+						Option.ShowUserControl<AdminInfo>(this.MainFlowContainer, new AdminInfo());
 						break;
 					}
 			}
@@ -88,6 +94,14 @@ namespace LibrarySystem.Views
 		private void addNewBookToolStripMenuItem1_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AddNewBook);
 
 		private void updateBookToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.UpdateBook);
+
+		private void listOfBooksToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.ViewStaffs);
+
+		private void addNewStaffToolStripMenuItem1_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AddNewStaff);
+
+		private void updateStaffToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.UpdateStaff);
+
+		private void adminInfoToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AdminInfo);
 	}
 
 

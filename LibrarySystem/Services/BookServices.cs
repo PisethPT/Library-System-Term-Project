@@ -9,10 +9,10 @@ namespace LibrarySystem.Services
 {
 	public class BookServices : ICrudOperations<Book>
 	{
-		private readonly BookLibrary context;
-		public BookServices(BookLibrary context)
+		public readonly BookLibrary context;
+		public BookServices()
 		{
-			this.context = context;
+			this.context = new BookLibrary();
 		}
 		public string Delete(int Id, Book entity)
 		{
@@ -53,7 +53,36 @@ namespace LibrarySystem.Services
 
 		public string Update(int Id, Book entity)
 		{
-			throw new NotImplementedException();
+			if (entity == null) throw new ArgumentNullException("Book Is Empty.");
+			else
+			{
+				try
+				{
+					var existingBook = context.Books.FirstOrDefault(b => b.BookId == Id);
+					if (existingBook is null)
+						return "Book not found.";
+					else
+					{
+						existingBook.ISBNCode = entity.ISBNCode;
+						existingBook.BookTitle = entity.BookTitle;
+						existingBook.CategoryId = entity.CategoryId;
+						existingBook.PublisherId = entity.PublisherId;
+						existingBook.PublicationYear = entity.PublicationYear;
+						existingBook.BookEdition = entity.BookEdition;
+						existingBook.CopiesTotal = entity.CopiesTotal;
+						existingBook.CopiesAvailable = entity.CopiesAvailable;
+
+						context.SaveChanges();
+					return "Create New Book Successfully.";
+					}
+				}
+				catch (Exception ex)
+				{
+					return ex.Message;
+				}
+			}
 		}
+
+		public List<GetViewBooks_Result> GetViewBooks() => context.GetViewBooks().ToList();
 	}
 }

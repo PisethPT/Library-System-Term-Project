@@ -1,6 +1,6 @@
 ﻿namespace LibrarySystem.UserControls
 {
-	partial class Dashboard
+	partial class AddStaff
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -37,17 +37,17 @@
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(11, 11);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(126, 25);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Dashboard";
+			this.label1.Size = new System.Drawing.Size(161, 25);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Add New Staff";
 			// 
-			// Dashboard
+			// AddStaff
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.Controls.Add(this.label1);
-			this.Name = "Dashboard";
+			this.Name = "AddStaff";
 			this.Size = new System.Drawing.Size(1873, 925);
 			this.ResumeLayout(false);
 			this.PerformLayout();

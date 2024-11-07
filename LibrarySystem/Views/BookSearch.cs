@@ -61,7 +61,10 @@ namespace LibrarySystem.Views
 			else
 				publisherId = null;
 
-			if (byte.Parse(this.BookEdition.Text.Trim()) == 0)
+			if (string.IsNullOrEmpty(this.BookEdition.Text) || string.IsNullOrWhiteSpace(this.BookEdition.Text))
+			{
+				bookEdition = null;
+			}else if (byte.Parse(this.BookEdition.Text.Trim()) == 0)
 				bookEdition = null;
 			else
 			bookEdition = byte.Parse(this.BookEdition.Text.Trim());
@@ -87,5 +90,6 @@ namespace LibrarySystem.Views
 			publisherId = null;
 			bookEdition = null;
 		}
+
 	}
 }

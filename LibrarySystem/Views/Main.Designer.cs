@@ -40,7 +40,7 @@
 			this.updateBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.staffManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.listOfBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ViewStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addNewStaffToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.updateStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,14 +93,14 @@
 			// borrowBookToolStripMenuItem
 			// 
 			this.borrowBookToolStripMenuItem.Name = "borrowBookToolStripMenuItem";
-			this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+			this.borrowBookToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.borrowBookToolStripMenuItem.Text = "Borrow Book";
 			this.borrowBookToolStripMenuItem.Click += new System.EventHandler(this.borrowBookToolStripMenuItem_Click);
 			// 
 			// bookIssueToolStripMenuItem
 			// 
 			this.bookIssueToolStripMenuItem.Name = "bookIssueToolStripMenuItem";
-			this.bookIssueToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+			this.bookIssueToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.bookIssueToolStripMenuItem.Text = "Book Issue";
 			this.bookIssueToolStripMenuItem.Click += new System.EventHandler(this.bookIssueToolStripMenuItem_Click);
 			// 
@@ -154,18 +154,19 @@
 			// staffManagementToolStripMenuItem
 			// 
 			this.staffManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfBooksToolStripMenuItem,
+            this.ViewStaffToolStripMenuItem,
             this.addNewBookToolStripMenuItem});
 			this.staffManagementToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.staffManagementToolStripMenuItem.Name = "staffManagementToolStripMenuItem";
 			this.staffManagementToolStripMenuItem.Size = new System.Drawing.Size(149, 25);
 			this.staffManagementToolStripMenuItem.Text = "Staff Management";
 			// 
-			// listOfBooksToolStripMenuItem
+			// ViewStaffToolStripMenuItem
 			// 
-			this.listOfBooksToolStripMenuItem.Name = "listOfBooksToolStripMenuItem";
-			this.listOfBooksToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
-			this.listOfBooksToolStripMenuItem.Text = "View Staff";
+			this.ViewStaffToolStripMenuItem.Name = "ViewStaffToolStripMenuItem";
+			this.ViewStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+			this.ViewStaffToolStripMenuItem.Text = "View Staff";
+			this.ViewStaffToolStripMenuItem.Click += new System.EventHandler(this.listOfBooksToolStripMenuItem_Click);
 			// 
 			// addNewBookToolStripMenuItem
 			// 
@@ -174,25 +175,27 @@
             this.updateStaffToolStripMenuItem,
             this.deleteStaffToolStripMenuItem});
 			this.addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
-			this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+			this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.addNewBookToolStripMenuItem.Text = "Staff Modify";
 			// 
 			// addNewStaffToolStripMenuItem1
 			// 
 			this.addNewStaffToolStripMenuItem1.Name = "addNewStaffToolStripMenuItem1";
-			this.addNewStaffToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
+			this.addNewStaffToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
 			this.addNewStaffToolStripMenuItem1.Text = "Add New Staff";
+			this.addNewStaffToolStripMenuItem1.Click += new System.EventHandler(this.addNewStaffToolStripMenuItem1_Click);
 			// 
 			// updateStaffToolStripMenuItem
 			// 
 			this.updateStaffToolStripMenuItem.Name = "updateStaffToolStripMenuItem";
-			this.updateStaffToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+			this.updateStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.updateStaffToolStripMenuItem.Text = "Update Staff";
+			this.updateStaffToolStripMenuItem.Click += new System.EventHandler(this.updateStaffToolStripMenuItem_Click);
 			// 
 			// deleteStaffToolStripMenuItem
 			// 
 			this.deleteStaffToolStripMenuItem.Name = "deleteStaffToolStripMenuItem";
-			this.deleteStaffToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+			this.deleteStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.deleteStaffToolStripMenuItem.Text = "Delete Staff";
 			// 
 			// settingToolStripMenuItem
@@ -208,13 +211,14 @@
 			// adminInfoToolStripMenuItem
 			// 
 			this.adminInfoToolStripMenuItem.Name = "adminInfoToolStripMenuItem";
-			this.adminInfoToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+			this.adminInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.adminInfoToolStripMenuItem.Text = "Admin Info";
+			this.adminInfoToolStripMenuItem.Click += new System.EventHandler(this.adminInfoToolStripMenuItem_Click);
 			// 
 			// logoutToolStripMenuItem
 			// 
 			this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-			this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+			this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
 			this.logoutToolStripMenuItem.Text = "Logout";
 			// 
 			// MainFlowContainer
@@ -263,7 +267,7 @@
 		private System.Windows.Forms.ToolStripMenuItem listOfStaffToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addNewStaffToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem staffManagementToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem listOfBooksToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ViewStaffToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addNewBookToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addNewBookToolStripMenuItem1;

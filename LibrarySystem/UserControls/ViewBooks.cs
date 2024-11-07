@@ -1,4 +1,5 @@
 ﻿using LibrarySystem.Data;
+using LibrarySystem.Services;
 using LibrarySystem.Views;
 using System;
 using System.Windows.Forms;
@@ -8,21 +9,21 @@ namespace LibrarySystem.UserControls
 {
 	public partial class ViewBooks : UserControl
 	{
-		private BookLibrary context;
+		private BookServices operations;
 		public ViewBooks()
 		{
 			InitializeComponent();
 			if (this != null)
 				Static.Component.ViewBookTable = this.ViewBookTable;
 
-			context = new BookLibrary();
+			operations = new BookServices();
 			this.SearchType.SelectedIndex = 0;
 			GetViewBooks();
 		}
 
 		private void GetViewBooks()
 		{
-			this.ViewBookTable.DataSource = context.GetViewBooks();
+			this.ViewBookTable.DataSource = operations.GetViewBooks();
 
 			this.ViewBookTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

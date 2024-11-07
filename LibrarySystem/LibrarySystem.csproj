@@ -119,6 +119,30 @@
     <Compile Include="UserControls\AddBook.Designer.cs">
       <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdminInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AdminInfo.Designer.cs">
+      <DependentUpon>AdminInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BookIssue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BookIssue.Designer.cs">
+      <DependentUpon>BookIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BorrowBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BorrowBook.Designer.cs">
+      <DependentUpon>BorrowBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,11 +155,23 @@
     <Compile Include="UserControls\UpdateBook.Designer.cs">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UpdateStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UpdateStaff.Designer.cs">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ViewBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ViewBooks.Designer.cs">
       <DependentUpon>ViewBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ViewStaff.Designer.cs">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BookList.cs">
       <SubType>Form</SubType>
@@ -168,14 +204,32 @@
     <EmbeddedResource Include="UserControls\AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AdminInfo.resx">
+      <DependentUpon>AdminInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BookIssue.resx">
+      <DependentUpon>BookIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BorrowBook.resx">
+      <DependentUpon>BorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateBook.resx">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UpdateStaff.resx">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ViewBooks.resx">
       <DependentUpon>ViewBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ViewStaff.resx">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>

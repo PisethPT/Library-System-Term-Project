@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BookList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAINJREFUSEvtlTEKgDAUxf79z6pn0GaVxLUgBrKE96Fb53Ocy0sE6+axTOwAwXqZ
-        2BjBepnYGMF6mdgYwXqZ2BjBerkPew2C9TKxMYL1MrExgvUysTGC9TKxMYL1ch/2GgTrZWJjBOtlYmME
-        62ViYwTrZWJjBOtlwm9UB9bN1x/t58HMDRQZH6RJI6IoAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

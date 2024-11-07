@@ -1,29 +1,24 @@
-﻿using LibrarySystem.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using LibrarySystem.Services;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibrarySystem.Views
 {
 	public partial class BookList : Form
 	{
-		private BookLibrary context;
+		private readonly BookServices operations;
 		public BookList()
 		{
 			InitializeComponent();
-			context = new BookLibrary();
+			operations = new BookServices();
 			GetViewBook();
 		}
 
 		private void GetViewBook()
 		{
-			this.ViewBookTable.DataSource = context.GetViewBooks();
+			this.ViewBookTable.DataSource = operations.GetViewBooks();
+			this.ViewBookTable.CellDoubleClick += ViewBookTable_CellDoubleClick;
 
 			this.ViewBookTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 			this.ViewBookTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -45,5 +40,35 @@ namespace LibrarySystem.Views
 			this.ViewBookTable.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			this.ViewBookTable.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 		}
+
+		private void ViewBookTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0)
+			{
+				GetDetailBook(e.RowIndex);
+				this.Dispose();
+			}
+		}
+
+		private void GetDetailBook(int RowIndex)
+		{
+			Static.Component.BookId = int.Parse(this.ViewBookTable.Rows[RowIndex].Cells[0].Value.ToString());
+			Static.Component.ISBNCode.Text = this.ViewBookTable.Rows[RowIndex].Cells[1].Value.ToString();
+			Static.Component.BookTitle.Text = this.ViewBookTable.Rows[RowIndex].Cells[2].Value.ToString();
+			Static.Component.Category.Items.Clear();
+			var categorySelected = this.ViewBookTable.Rows[RowIndex].Cells[3].Value.ToString();
+			Static.Component.Category.Items.AddRange(operations.context.Categories.Select(c => c.CategoryName).ToArray());
+			Static.Component.Category.SelectedItem = categorySelected;
+			Static.Component.Publisher.Items.Clear();
+			var publisherSelected = this.ViewBookTable.Rows[RowIndex].Cells[4].Value.ToString();
+			Static.Component.Publisher.Items.AddRange(operations.context.Publishers.Select(p => p.PublisherName).ToArray());
+			Static.Component.Publisher.SelectedItem = publisherSelected;
+
+			Static.Component.PublicationDate.Text = this.ViewBookTable.Rows[RowIndex].Cells[7].Value.ToString();
+			Static.Component.BookEdition.Value = decimal.Parse(this.ViewBookTable.Rows[RowIndex].Cells[8].Value.ToString());
+			Static.Component.CopiesTotal.Value = decimal.Parse(this.ViewBookTable.Rows[RowIndex].Cells[9].Value.ToString());
+			Static.Component.CopiesAvailable.Value = decimal.Parse(this.ViewBookTable.Rows[RowIndex].Cells[10].Value.ToString());
+		}
+
 	}
 }

@@ -168,6 +168,7 @@
 			this.BtnSave.TabIndex = 10;
 			this.BtnSave.Text = "Save";
 			this.BtnSave.UseVisualStyleBackColor = true;
+			this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
 			// 
 			// panel5
 			// 
@@ -284,15 +285,11 @@
 			// 
 			this.Publisher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Publisher.FormattingEnabled = true;
-			this.Publisher.Items.AddRange(new object[] {
-            "ISBN Code",
-            "Book Name",
-            "Category",
-            "Publisher Name"});
 			this.Publisher.Location = new System.Drawing.Point(140, 4);
 			this.Publisher.Name = "Publisher";
 			this.Publisher.Size = new System.Drawing.Size(349, 29);
 			this.Publisher.TabIndex = 8;
+			this.Publisher.SelectedIndexChanged += new System.EventHandler(this.Publisher_SelectedIndexChanged);
 			// 
 			// label6
 			// 
@@ -329,11 +326,6 @@
 			// 
 			this.Category.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Category.FormattingEnabled = true;
-			this.Category.Items.AddRange(new object[] {
-            "ISBN Code",
-            "Book Name",
-            "Category",
-            "Publisher Name"});
 			this.Category.Location = new System.Drawing.Point(757, 3);
 			this.Category.Name = "Category";
 			this.Category.Size = new System.Drawing.Size(239, 29);
