@@ -188,6 +188,12 @@
     <Compile Include="Views\BookSearch.Designer.cs">
       <DependentUpon>BookSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,8 +258,14 @@
     <EmbeddedResource Include="Views\BookSearch.resx">
       <DependentUpon>BookSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User_Login.resx">
+      <DependentUpon>User_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Data\Entity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
