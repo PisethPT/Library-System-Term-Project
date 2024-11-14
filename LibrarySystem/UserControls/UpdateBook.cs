@@ -63,5 +63,30 @@ namespace LibrarySystem.UserControls
 			Static.Component.Category.Items.Clear();
 			Static.Component.Publisher.Items.Clear();
 		}
-	}
+
+        private void ISBNCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateBook_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

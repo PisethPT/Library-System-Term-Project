@@ -33,7 +33,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLoginForm = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -41,7 +40,7 @@
             // 
             this.Username.AutoSize = true;
             this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username.Location = new System.Drawing.Point(90, 178);
+            this.Username.Location = new System.Drawing.Point(73, 128);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(110, 25);
             this.Username.TabIndex = 0;
@@ -51,7 +50,7 @@
             // 
             this.Password.AutoSize = true;
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(90, 244);
+            this.Password.Location = new System.Drawing.Point(73, 194);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(106, 25);
             this.Password.TabIndex = 1;
@@ -59,7 +58,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(245, 181);
+            this.txtUsername.Location = new System.Drawing.Point(228, 131);
             this.txtUsername.MaxLength = 25;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(193, 22);
@@ -67,7 +66,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(245, 248);
+            this.txtPassword.Location = new System.Drawing.Point(228, 198);
             this.txtPassword.MaxLength = 25;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(193, 22);
@@ -76,27 +75,17 @@
             // btnLoginForm
             // 
             this.btnLoginForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginForm.Location = new System.Drawing.Point(142, 308);
+            this.btnLoginForm.Location = new System.Drawing.Point(177, 257);
             this.btnLoginForm.Name = "btnLoginForm";
             this.btnLoginForm.Size = new System.Drawing.Size(141, 58);
             this.btnLoginForm.TabIndex = 3;
             this.btnLoginForm.Text = "LOGIN";
             this.btnLoginForm.UseVisualStyleBackColor = true;
             // 
-            // btnCreate
-            // 
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(333, 308);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(141, 58);
-            this.btnCreate.TabIndex = 4;
-            this.btnCreate.Text = "Create an Account";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 109);
+            this.dateTimePicker1.Location = new System.Drawing.Point(78, 59);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(240, 22);
             this.dateTimePicker1.TabIndex = 5;
@@ -105,9 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 360);
+            this.ClientSize = new System.Drawing.Size(520, 383);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnLoginForm);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -129,7 +117,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLoginForm;
-        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

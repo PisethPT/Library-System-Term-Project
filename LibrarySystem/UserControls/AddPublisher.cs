@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LibrarySystem.UserControls
 {
-	public partial class ViewStaff : UserControl
-	{
-		public ViewStaff()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class AddPublisher : UserControl
+    {
+        public AddPublisher()
+        {
+            InitializeComponent();
+        }
+    }
 }

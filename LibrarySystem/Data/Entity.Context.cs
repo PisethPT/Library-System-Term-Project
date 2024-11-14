@@ -47,7 +47,7 @@ namespace LibrarySystem.Data
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetViewBooks_Result>("GetViewBooks");
         }
     
-        public virtual int Pro_InsertBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publicationId, Nullable<System.DateTime> publicationYear, Nullable<byte> bookEdition, Nullable<int> copiesTotal, Nullable<int> copiesAvailable)
+        public virtual int Pro_InsertBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publicationId, Nullable<System.DateTime> publicatioinYear, Nullable<byte> bookEdition, Nullable<int> copiesTotal, Nullable<int> copiesAvailable)
         {
             var iSBNCodeParameter = iSBNCode != null ?
                 new ObjectParameter("ISBNCode", iSBNCode) :
@@ -65,9 +65,9 @@ namespace LibrarySystem.Data
                 new ObjectParameter("publicationId", publicationId) :
                 new ObjectParameter("publicationId", typeof(int));
     
-            var publicationYearParameter = publicationYear.HasValue ?
-                new ObjectParameter("publicationYear", publicationYear) :
-                new ObjectParameter("publicationYear", typeof(System.DateTime));
+            var publicatioinYearParameter = publicatioinYear.HasValue ?
+                new ObjectParameter("publicatioinYear", publicatioinYear) :
+                new ObjectParameter("publicatioinYear", typeof(System.DateTime));
     
             var bookEditionParameter = bookEdition.HasValue ?
                 new ObjectParameter("bookEdition", bookEdition) :
@@ -81,7 +81,7 @@ namespace LibrarySystem.Data
                 new ObjectParameter("copiesAvailable", copiesAvailable) :
                 new ObjectParameter("copiesAvailable", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pro_InsertBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publicationIdParameter, publicationYearParameter, bookEditionParameter, copiesTotalParameter, copiesAvailableParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pro_InsertBook", iSBNCodeParameter, bookTitleParameter, categoryIdParameter, publicationIdParameter, publicatioinYearParameter, bookEditionParameter, copiesTotalParameter, copiesAvailableParameter);
         }
     
         public virtual ObjectResult<SearchBook_Result> SearchBook(string iSBNCode, string bookTitle, Nullable<int> categoryId, Nullable<int> publisherId, Nullable<System.DateTime> publicationYear, Nullable<byte> bookEdition)

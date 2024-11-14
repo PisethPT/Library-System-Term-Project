@@ -42,9 +42,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\ADO.net\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -76,6 +82,11 @@
     <Compile Include="Data\Category.cs">
       <DependentUpon>Entity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataStaff.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataStaff.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Entity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +103,9 @@
       <DependentUpon>Entity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\GetViewBooks_Result.cs">
+      <DependentUpon>Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetViewStaffs_Result.cs">
       <DependentUpon>Entity.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Member.cs">
@@ -152,6 +166,24 @@
     <Compile Include="UserControls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DeleteStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeleteStaff.Designer.cs">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Member.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Member.Designer.cs">
+      <DependentUpon>Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddPublisher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddPublisher.Designer.cs">
+      <DependentUpon>AddPublisher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,12 +201,6 @@
     </Compile>
     <Compile Include="UserControls\ViewBooks.Designer.cs">
       <DependentUpon>ViewBooks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\ViewStaff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\ViewStaff.Designer.cs">
-      <DependentUpon>ViewStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BookList.cs">
       <SubType>Form</SubType>
@@ -212,6 +238,15 @@
     <Compile Include="Views\User_Login.Designer.cs">
       <DependentUpon>User_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewStaff.Designer.cs">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
+    </Compile>
+    <None Include="Data\DataStaff.dbml.layout">
+      <DependentUpon>DataStaff.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -240,6 +275,12 @@
     <EmbeddedResource Include="UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddPublisher.resx">
+      <DependentUpon>AddPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DeleteStaff.resx">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateBook.resx">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,9 +289,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ViewBooks.resx">
       <DependentUpon>ViewBooks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ViewStaff.resx">
-      <DependentUpon>ViewStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
@@ -267,10 +305,18 @@
     <EmbeddedResource Include="Views\User_Login.resx">
       <DependentUpon>User_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewStaff.resx">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Data\Entity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Entity.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Data\DataStaff.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataStaff.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Data\Entity.edmx.diagram">
       <DependentUpon>Entity.edmx</DependentUpon>
     </None>
@@ -304,10 +350,12 @@
       <DependentUpon>Entity.edmx</DependentUpon>
       <LastGenOutput>Entity.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1055107_bookshelf_books_library_icon.png" />
     <None Include="Resources\icons8-table-241.png" />
     <None Include="Resources\icons8-table-24.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

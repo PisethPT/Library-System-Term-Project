@@ -71,8 +71,11 @@ namespace LibrarySystem.Views
 						break;
 					}
 				case SystemOption.DeleteStaff:
+
 					{
-						break;
+						Option.ShowUserControl<DeleteStaff>(this.MainFlowContainer, new DeleteStaff());
+
+                        break;
 					}
 				case SystemOption.AdminInfo:
 					{
@@ -101,11 +104,25 @@ namespace LibrarySystem.Views
 
 		private void updateStaffToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.UpdateStaff);
 
-		private void adminInfoToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AdminInfo);
-	}
+        private void deleteStaffToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.DeleteStaff);
+
+        private void adminInfoToolStripMenuItem_Click(object sender, EventArgs e) => SelectMenu(SystemOption.AdminInfo);
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void addNewBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 
 
-	public class Options
+    public class Options
 	{
 		public void ShowUserControl<T>(FlowLayoutPanel panel, T t)
 		{

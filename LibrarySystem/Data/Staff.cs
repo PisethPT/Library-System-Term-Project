@@ -22,6 +22,10 @@ namespace LibrarySystem.Data
     
         public int StaffId { get; set; }
         public string StaffName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
+        public string UserType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookRequest> BookRequests { get; set; }

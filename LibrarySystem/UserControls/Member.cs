@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibrarySystem.Views
+namespace LibrarySystem.UserControls
 {
-    public partial class User_Login : Form
+    public partial class Member : UserControl
     {
-        public User_Login()
+        public Member()
         {
             InitializeComponent();
-        }
-
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

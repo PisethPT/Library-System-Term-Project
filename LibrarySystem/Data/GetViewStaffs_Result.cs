@@ -10,13 +10,8 @@
 namespace LibrarySystem.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class BookAuthor
+    public partial class GetViewStaffs_Result
     {
-        public int BookId { get; set; }
-        public Nullable<int> AuthorId { get; set; }
-    
-        public virtual Author Author { get; set; }
     }
 }

@@ -70,5 +70,9 @@ namespace LibrarySystem.Views
 			Static.Component.CopiesAvailable.Value = decimal.Parse(this.ViewBookTable.Rows[RowIndex].Cells[10].Value.ToString());
 		}
 
-	}
+        private void ViewBookTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

@@ -5,22 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d7859caec81d439795a55c18bf8faeac" Name="Diagram1">
-        <EntityTypeShape EntityType="BookLibraryModel.Author" Width="1.5" PointX="2.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.Book" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.BookIssue" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.BookRequest" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.Category" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.Member" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BookLibraryModel.Publisher" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookLibraryModel.Staff" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="BookLibraryModel.FK__Book__CategoryId__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="BookLibraryModel.FK__Book__PublisherI__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="BookLibraryModel.FK__BookIssue__BookI__4AB81AF0" ManuallyRouted="false" />
         <AssociationConnector Association="BookLibraryModel.FK__BookIssue__Reque__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="BookLibraryModel.FK__BookReque__Membe__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="BookLibraryModel.FK__BookReque__Staff__46E78A0C" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BookLibraryModel.BookAuthor" Width="1.5" PointX="5" PointY="5" />
-        <AssociationConnector Association="BookLibraryModel.FK__BookAutho__Autho__4D94879B" />
+        <EntityTypeShape EntityType="BookLibraryModel.Staff" Width="1.5" PointX="0.75" PointY="14.125" />
+        <AssociationConnector Association="BookLibraryModel.FK__BookReque__Staff__46E78A0C" />
+        <EntityTypeShape EntityType="BookLibraryModel.BookAuthor" Width="1.5" PointX="0.75" PointY="4.75" />
+      </Diagram>
+      <Diagram DiagramId="0e2431e504464362a0cab69d7d0e821a" Name="Diagram2" >
+        <EntityTypeShape EntityType="BookLibraryModel.Author" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

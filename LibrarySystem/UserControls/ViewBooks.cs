@@ -51,5 +51,10 @@ namespace LibrarySystem.UserControls
 			search.Owner = main;
 			search.ShowDialog();
 		}
-	}
+
+        private void ViewBookTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

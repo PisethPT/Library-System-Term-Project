@@ -1,39 +1,40 @@
 ﻿namespace LibrarySystem.UserControls
 {
-	partial class AddStaff
-	{
-		/// <summary> 
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class DeleteStaff
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary> 
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Component Designer generated code
+        #region Component Designer generated code
 
-		/// <summary> 
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.UserType = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnReset = new System.Windows.Forms.Button();
-            this.BtnSave = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.FristName = new System.Windows.Forms.TextBox();
             this.Password = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtStaffId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -55,20 +55,31 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(78, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "DeleteStaff";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.BtnReset);
-            this.panel1.Controls.Add(this.BtnSave);
+            this.panel1.Controls.Add(this.BtnDelete);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(32, 125);
+            this.panel1.Location = new System.Drawing.Point(31, 105);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1447, 444);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 8;
             // 
             // panel5
             // 
@@ -115,17 +126,17 @@
             this.BtnReset.Text = "Reset";
             this.BtnReset.UseVisualStyleBackColor = true;
             // 
-            // BtnSave
+            // BtnDelete
             // 
-            this.BtnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSave.Location = new System.Drawing.Point(39, 369);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(127, 36);
-            this.BtnSave.TabIndex = 10;
-            this.BtnSave.Text = "Save";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            this.BtnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDelete.Location = new System.Drawing.Point(39, 369);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(127, 36);
+            this.BtnDelete.TabIndex = 10;
+            this.BtnDelete.Text = "Delete";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // panel4
             // 
@@ -271,26 +282,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "StaffId";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(65, 77);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(201, 31);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Add New Staff";
-            // 
-            // AddStaff
+            // DeleteStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label12);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddStaff";
+            this.Controls.Add(this.label1);
+            this.Name = "DeleteStaff";
             this.Size = new System.Drawing.Size(2497, 1138);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -304,28 +302,29 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-		}
+        }
 
-		#endregion
+        #endregion
+
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox UserType;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BtnReset;
-        private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox FristName;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox LastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox StaffName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtStaffId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox UserType;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox FristName;
-        private System.Windows.Forms.TextBox LastName;
     }
 }
