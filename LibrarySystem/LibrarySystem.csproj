@@ -127,6 +127,7 @@
     <Compile Include="Models\SystemOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BookRequestServices.cs" />
     <Compile Include="Services\BookServices.cs" />
     <Compile Include="Services\ICrudOperations.cs" />
     <Compile Include="Static\Component.cs" />
