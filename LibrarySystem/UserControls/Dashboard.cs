@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibrarySystem.Data;
+using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +18,14 @@ namespace LibrarySystem.UserControls
 		{
 			InitializeComponent();
 		}
-	}
+
+		public void Count()
+		{
+            IblTotalBooks.Text = 
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

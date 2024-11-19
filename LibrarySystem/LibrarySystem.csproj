@@ -281,6 +281,9 @@
     <EmbeddedResource Include="UserControls\DeleteStaff.resx">
       <DependentUpon>DeleteStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Member.resx">
+      <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateBook.resx">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
